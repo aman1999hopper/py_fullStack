@@ -1,43 +1,159 @@
 {% load static tailwind_tags %}
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Health Connect - Home</title>
     {% tailwind_css %}
-</head>
-<body class="font-sans leading-relaxed m-0 p-0">
-    <nav class="bg-gray-800 p-4">
-        <a href="/" class="text-white no-underline mr-5">Home</a>
-        <a href="/about" class="text-white no-underline mr-5">About</a>
-        <a href="/services" class="text-white no-underline mr-5">Services</a>
+  </head>
+  <body class="font-sans leading-relaxed m-0 p-0">
+    <nav class="bg-gray-800 p-4 flex items-center justify-between">
+      <div class="flex-1 flex justify-center space-x-5">
+        <a href="/" class="text-white no-underline">Home</a>
+        <a href="/about" class="text-white no-underline">About</a>
+        <a href="/services" class="text-white no-underline">Services</a>
         <a href="/contact" class="text-white no-underline">Contact</a>
+      </div>
+      <div class="absolute right-4">
+        <a
+          href="/get-started"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300"
+        >
+          Get Started
+        </a>
+      </div>
     </nav>
 
-    <div class="bg-blue-500 text-white py-16 px-4 text-center">
-        <h1 class="text-4xl font-bold mb-4">Welcome to Health Connect</h1>
-        <p class="text-lg">Your trusted partner in healthcare solutions</p>
-    </div>
-
-    <div class="max-w-screen-xl mx-auto px-4 py-8">
-        <h2 class="text-2xl font-semibold mb-6">Our Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-xl font-bold mb-2">Online Consultations</h3>
-                <p>Connect with healthcare professionals from the comfort of your home.</p>
+    <div class="relative h-[500px] overflow-hidden">
+        <!-- Image Slider -->
+        <div class="slider-container relative h-full">
+            <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000">
+                <img src="{% static 'products/images/slide1.jpg' %}" alt="Healthcare 1" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <h1 class="text-4xl font-bold mb-4">Welcome to Health Connect</h1>
+                        <p class="text-lg">Your trusted partner in healthcare solutions</p>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-xl font-bold mb-2">Health Records</h3>
-                <p>Secure storage and easy access to your medical history.</p>
+            <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000">
+                <img src="{% static 'products/images/slide2.jpg' %}" alt="Healthcare 2" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <h1 class="text-4xl font-bold mb-4">Professional Healthcare Services</h1>
+                        <p class="text-lg">Expert care when you need it most</p>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
-                <p>Round-the-clock assistance for all your healthcare needs.</p>
+            <div class="slide absolute w-full h-full opacity-0 transition-opacity duration-1000">
+                <img src="{% static 'products/images/slide3.jpg' %}" alt="Healthcare 3" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <h1 class="text-4xl font-bold mb-4">24/7 Medical Support</h1>
+                        <p class="text-lg">Always here for your health needs</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <footer class="bg-gray-800 text-white text-center py-4 w-full">
-        <p>&copy; 2024 Health Connect. All rights reserved.</p>
+    <div class="max-w-screen-xl mx-auto px-4 py-8">
+      <h2 class="text-2xl font-semibold mb-6">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-xl font-bold mb-2">Online Consultations</h3>
+          <p>
+            Connect with healthcare professionals from the comfort of your home.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-xl font-bold mb-2">Health Records</h3>
+          <p>Secure storage and easy access to your medical history.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+          <p>Round-the-clock assistance for all your healthcare needs.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white px-6 py-10">
+      <div
+        class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0"
+      >
+        <!-- Logo / Heading -->
+        <div class="text-center md:text-left">
+          <h2 class="text-2xl font-bold mb-2">Health Connect</h2>
+          <p class="text-gray-400">
+            Your trusted partner in healthcare solutions.
+          </p>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex space-x-6">
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition duration-300"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition duration-300"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition duration-300"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition duration-300"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition duration-300"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Note -->
+      <div class="mt-8 text-center text-gray-500 text-sm">
+        &copy; 2024 Health Connect. All rights reserved.
+      </div>
     </footer>
-</body>
+  </body>
+
+  
+<!-- Add this script at the end of your body tag -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.slide');
+      let currentSlide = 0;
+
+      // Show first slide initially
+      slides[0].classList.add('opacity-100');
+
+      function nextSlide() {
+          // Hide current slide
+          slides[currentSlide].classList.remove('opacity-100');
+          
+          // Move to next slide
+          currentSlide = (currentSlide + 1) % slides.length;
+          
+          // Show new slide
+          slides[currentSlide].classList.add('opacity-100');
+      }
+
+      // Change slide every 5 seconds
+      setInterval(nextSlide, 5000);
+  });
+</script>
+
 </html>
